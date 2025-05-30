@@ -1,0 +1,29 @@
+@use "../../Styles/variables" as *;
+
+.features {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 920px) {
+        flex-direction: row;
+    }
+
+    &__icon {
+        width: 100px;
+        border: 10px solid $main-color;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+
+    &__item {
+        flex: 1;
+        padding: 2.5rem;
+
+        &--title {
+            color: $feature-item-color;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@use "../../Styles/variables" as *;
+
+.active {
+    color: $active-color
+}
+
+.header-nav {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 20px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        &--image {
+            max-width: 100%;
+            width: 200px;
+        }
+    }
+
+    &__links {
+        font-weight: bold;
+    }
+
+    &__item {
+        text-decoration: none;
+        color: $secondary-color;
+        margin-right: 0.5rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
