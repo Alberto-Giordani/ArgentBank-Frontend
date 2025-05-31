@@ -44,7 +44,7 @@ function Nav() {
                         </>
                     ) : (
                         <NavLink
-                            to="/signin"
+                            to="/sign-in"
                             className={({ isActive }) =>
                                 isActive
                                     ? "header-nav__item active"

@@ -4,9 +4,9 @@ import "./Layout.scss";
 
 function Layout({ children }) {
     return (
-        <div>
+        <div className="content__wrapper">
             <Nav />
-            <main className="main">{children}</main>
+            <div className="content__wrapper">{children}</div>
             <Footer />
         </div>
     );
