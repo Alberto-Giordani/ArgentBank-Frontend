@@ -29,6 +29,10 @@ body {
     flex: 1;
 }
 
+.bg-dark {
+    background-color: $dark-background-color;
+}
+
 #root {
     display: flex;
     flex-direction: column;

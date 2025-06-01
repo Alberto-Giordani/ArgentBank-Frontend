@@ -1,0 +1,15 @@
+@use "../../Styles/variables" as *;
+
+.welcome {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 32px;
+}
+
+.edit-button {
+    border-color: $main-color;
+    background-color: $main-color;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}

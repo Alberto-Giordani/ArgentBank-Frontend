@@ -1,11 +1,9 @@
 @use "../../Styles/variables" as *;
 
 
-.bg-dark {
-    background-color: $dark-background-color;
-}
 
-.signIn {
+
+.login {
 
     &__content {
         box-sizing: border-box;
