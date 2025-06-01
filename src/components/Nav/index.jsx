@@ -26,7 +26,7 @@ function Nav() {
                     {isAuthenticated ? (
                         <>
                             <NavLink
-                                to="/user"
+                                to="/profile"
                                 className={({ isActive }) =>
                                     isActive
                                         ? "header-nav__item active"
@@ -44,7 +44,7 @@ function Nav() {
                         </>
                     ) : (
                         <NavLink
-                            to="/sign-in"
+                            to="/login"
                             className={({ isActive }) =>
                                 isActive
                                     ? "header-nav__item active"
