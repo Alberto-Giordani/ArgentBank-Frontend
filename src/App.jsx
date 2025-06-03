@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
 import Layout from './components/Layout'
-import './App.scss'
+import PrivateRoot from './components/PrivateRoot'
 
 function App() {
   return (
@@ -12,7 +12,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoot>
+                <Profile />
+              </PrivateRoot>
+            }
+          />
         </Routes>
       </Layout>
     </BrowserRouter>

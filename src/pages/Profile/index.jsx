@@ -1,11 +1,14 @@
+import { useSelector } from "react-redux";
 import "./Profile.scss";
 import Account from "../../components/Account";
 
 function Profile() {
+    const { firstName, lastName } = useSelector((state) => state.user);
+
     return (
         <main className="main bg-dark">
             <section className="welcome">
-                <h1>Welcome back<br />Tony!</h1>
+                <h1>Welcome back<br />{firstName} {lastName}!</h1>
                 <button className="edit-button">Edit Name</button>
             </section>
             <Account title="Argent Bank Checking (x8349)" amount="2,082.79" />
