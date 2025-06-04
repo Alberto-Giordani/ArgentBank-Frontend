@@ -5,7 +5,7 @@ import logo from "../../assets/images/argentBankLogo.webp";
 import "./Nav.scss";
 
 function Nav() {
-    const { isAuthenticated, firstName, lastName } = useSelector((state) => state.user);
+    const { isAuthenticated, firstName } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -33,15 +33,13 @@ function Nav() {
                                         : "header-nav__item"
                                 }
                             >
-                                <i className="fa fa-user-circle"></i> {""}{firstName && lastName
-                                    ? `${firstName} ${lastName}`
-                                    : "User"}
+                                <i className="fa fa-user-circle"></i> {firstName || "User"}
                             </NavLink>
                             <button
                                 onClick={handleLogout}
-                                className="header-nav__item logout-button"
+                                className="header-nav__item header-nav__logout-button"
                             >
-                                <i className="fa fa-sign-out"></i> Logout
+                                <i className="fa fa-sign-out"></i> Sign Out
                             </button>
                         </>
                     ) : (
