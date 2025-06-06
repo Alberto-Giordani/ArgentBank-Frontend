@@ -1,7 +1,7 @@
 @use '../../Styles/variables' as *;
 
 .overlay {
-    display: none;
+    display: flex;
     position: fixed;
     margin: 0;
     padding: 0;
@@ -18,28 +18,28 @@
 .modal {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 630px;
-    min-height: 670px;
-    padding-top: 60px;
+    padding: 20px 30px 30px;
     text-align: center;
     color: white;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: bold;
     background-color: $main-color;
-    border-radius: 10px;
+    border-style: outset;
+    border-color: $main-color;
     z-index: 10000;
 
     &__btn--close {
         position: absolute;
         height: 24px;
         width: 24px;
-        top: 26px;
-        right: 30px;
+        top: 5px;
+        right: 5px;
+        color: $secondary-color;
         cursor: pointer;
     }
 
@@ -49,13 +49,14 @@
         margin-bottom: 1rem;
 
         label {
-            font-weight: bold margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         input {
             padding: 0.5rem;
-            border: 1px solid $secondary-color;
-            border-radius: 5px;
+            border: 1px outset $secondary-color;
             font-size: 1rem;
         }
     }
@@ -70,7 +71,6 @@
         flex: 1;
         padding: 0.5rem 1rem;
         border: none;
-        border-radius: 5px;
         cursor: pointer;
         background-color: $secondary-color;
         color: white;

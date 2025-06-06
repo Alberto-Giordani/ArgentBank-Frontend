@@ -1,11 +1,11 @@
-import "./Form.scss"
+import "./UsernameForm.scss"
 import iconClose from "../../assets/images/xmark.webp"
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setProfile } from "../../features/user/userSlice";
 
-function Form({ onClose }) {
-    const { token } = useSelector((state) => state.user);
+function UsernameForm({ onClose }) {
+    const { token, firstName, lastName } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
     const [userNameInput, setUserNameInput] = useState("");
@@ -38,7 +38,7 @@ function Form({ onClose }) {
             const data = await response.json();
             const { userName } = data.body;
 
-            dispatch(setProfile({ userName }));
+            dispatch(setProfile({ firstName, lastName, userName }));
             onClose();
 
         } catch (err) {
@@ -50,7 +50,7 @@ function Form({ onClose }) {
             <form className="modal" onSubmit={handleSubmit}>
                 <img src={iconClose} className="modal__btn--close" alt="fermeture"
                     onClick={onClose} />
-                <h2>Modify Username</h2>
+                <h2>Edit Username</h2>
 
                 <div className="modal__field">
                     <label htmlFor="userName">New Username</label>
@@ -66,11 +66,11 @@ function Form({ onClose }) {
 
                 {error && <p className="modal__error">{error}</p>}
 
-                <button type="button" className="modal__submit">Submit</button>
+                <button type="submit" className="modal__submit">Submit</button>
 
             </form>
         </section>
     )
 }
 
-export default Form;
+export default UsernameForm;

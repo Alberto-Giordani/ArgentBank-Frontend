@@ -50,9 +50,9 @@ function Login() {
 
             const profileData = await profileResponse.json();
 
-            const { firstName, lastName } = profileData.body;
+            const { firstName, lastName, userName } = profileData.body;
 
-            dispatch(setProfile({ firstName, lastName }));
+            dispatch(setProfile({ firstName, lastName, userName }));
             navigate("/profile");
         } catch (err) {
             setError(err.message);
