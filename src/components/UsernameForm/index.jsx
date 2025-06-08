@@ -1,11 +1,10 @@
 import "./UsernameForm.scss"
-import iconClose from "../../assets/images/xmark.webp"
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setProfile } from "../../features/user/userSlice";
 
 function UsernameForm({ onClose }) {
-    const { token, firstName, lastName } = useSelector((state) => state.user);
+    const { token, firstName, lastName, userName } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
     const [userNameInput, setUserNameInput] = useState("");
@@ -36,9 +35,9 @@ function UsernameForm({ onClose }) {
             }
 
             const data = await response.json();
-            const { userName } = data.body;
+            const { userName: newUserName } = data.body;
 
-            dispatch(setProfile({ firstName, lastName, userName }));
+            dispatch(setProfile({ firstName, lastName, userName: newUserName }));
             onClose();
 
         } catch (err) {
@@ -46,28 +45,56 @@ function UsernameForm({ onClose }) {
         }
     }
     return (
-        <section className="overlay">
-            <form className="modal" onSubmit={handleSubmit}>
-                <img src={iconClose} className="modal__btn--close" alt="fermeture"
-                    onClick={onClose} />
-                <h2>Edit Username</h2>
+        <section className="inlineForm">
+            <h2>Edit user info</h2>
 
-                <div className="modal__field">
-                    <label htmlFor="userName">New Username</label>
+            <form onSubmit={handleSubmit}>
+                <div className="inlineForm__field">
+                    <label htmlFor="userName">User name</label>
                     <input
                         id="userName"
                         type="text"
                         value={userNameInput}
                         onChange={(e) => setUserNameInput(e.target.value)}
-                        placeholder="Enter new username"
+                        placeholder={userName}
                         required
                     />
                 </div>
 
-                {error && <p className="modal__error">{error}</p>}
+                <div className="inlineForm__field">
+                    <label htmlFor="firstName">First name</label>
+                    <input
+                        id="firstName"
+                        type="text"
+                        value={firstName}
+                        disabled
+                    />
+                </div>
 
-                <button type="submit" className="modal__submit">Submit</button>
+                <div className="inlineForm__field">
+                    <label htmlFor="lastName">Last name</label>
+                    <input
+                        id="lastName"
+                        type="text"
+                        value={lastName}
+                        disabled
+                    />
+                </div>
 
+                {error && <p className="inlineForm__error">{error}</p>}
+
+                <div className="inlineForm__buttonsWrapper">
+                    <button type="submit" className="inlineForm__button">
+                        Save
+                    </button>
+                    <button
+                        type="button"
+                        className="inlineForm__button"
+                        onClick={onClose}
+                    >
+                        Cancel
+                    </button>
+                </div>
             </form>
         </section>
     )

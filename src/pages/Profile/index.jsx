@@ -16,16 +16,17 @@ function Profile() {
                     <br />
                     {firstName} {lastName}!
                 </h1>
-                <button className="edit-button"
-                    onClick={() => setIsEditing(true)}
-                >
-                    Edit Username
-                </button>
+                {isEditing ? (
+                    <UsernameForm onClose={() => setIsEditing(false)} />
+                ) : (
+                    <button className="edit-button"
+                        onClick={() => setIsEditing(true)}
+                    >
+                        Edit Username
+                    </button>
+                )
+                }
             </section>
-
-            {isEditing && (
-                <UsernameForm onClose={() => setIsEditing(false)} />
-            )}
 
             <Account title="Argent Bank Checking (x8349)" amount="2,082.79" />
             <Account title="Argent Bank Savings (x6712)" amount="10,928.42" />
