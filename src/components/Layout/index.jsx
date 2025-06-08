@@ -2,11 +2,11 @@ import Nav from "../Nav";
 import Footer from "../Footer";
 import "./Layout.scss";
 
-function Layout({ children }) {
+function Layout({ children, containerClass = '' }) {
     return (
-        <div className="content__wrapper">
+        <div className="layout">
             <Nav />
-            <div className="content__wrapper">{children}</div>
+            <div className={`container ${containerClass}`}>{children}</div>
             <Footer />
         </div>
     );

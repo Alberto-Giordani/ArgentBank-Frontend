@@ -8,20 +8,28 @@ import PrivateRoot from './components/PrivateRoot'
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/profile"
-            element={
+      <Routes>
+        <Route path="/" element={
+          <Layout containerClass="light-bg">
+            <Home />
+          </Layout>
+        } />
+        <Route path="/login" element={
+          <Layout>
+            <Login />
+          </Layout>
+        } />
+        <Route
+          path="/profile"
+          element={
+            <Layout>
               <PrivateRoot>
                 <Profile />
               </PrivateRoot>
-            }
-          />
-        </Routes>
-      </Layout>
+            </Layout>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   )
 }
