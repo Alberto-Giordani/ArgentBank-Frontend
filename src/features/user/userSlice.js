@@ -22,11 +22,11 @@ const userSlice = createSlice({
             state.userName = action.payload.userName
         },
         logout: (state) => {
-            state.token = null
-            state.isAuthenticated = false
-            state.firstName = ""
-            state.lastName = ""
-            state.userName = ""
+            state.token = initialState.token
+            state.isAuthenticated = initialState.isAuthenticated
+            state.firstName = initialState.firstName
+            state.lastName = initialState.lastName
+            state.userName = initialState.userName
         },
     },
 })
