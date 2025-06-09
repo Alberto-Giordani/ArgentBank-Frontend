@@ -1,8 +1,8 @@
-#ArgentBank-Frontend-React
+# ArgentBank-Frontend-React
 
 A modern React front-end application for Argent Bank, enabling user authentication, profile management, and account overviews.
 
-##System Requirements
+## System Requirements
 
 - **Node.js**: version 14.x or higher (recommend using the latest LTS, e.g., 16.x or 18.x)
 
@@ -10,7 +10,7 @@ A modern React front-end application for Argent Bank, enabling user authenticati
 
 - **Supported Browsers**: Chrome, Firefox, Safari, Edge (latest versions)
 
-##Installation
+## Installation
 
 1. Clone the repository:
 
@@ -24,7 +24,7 @@ A modern React front-end application for Argent Bank, enabling user authenticati
 
 `npm install`
 
-##Development
+## Development
 
 Start the development server with hot-reloading:
 
@@ -32,7 +32,7 @@ Start the development server with hot-reloading:
 
 *Open your browser at ***http://localhost:5173*** (default Vite port).*
 
-##Main Features
+## Main Features
 
 - **User Authentication**: Secure login with JWT tokens, protected routes using PrivateRoot component.
 
@@ -42,12 +42,12 @@ Start the development server with hot-reloading:
 
 - **Responsive Layout**: Mobile-first design with consistent header/nav/footer across pages.
 
-##Usage Examples
+## Usage Examples
 
-###Login
+### Login
 
 Enter your email and password, then click **Sign In**.
 
-###Profile
+### Profile
 
 View your name, edit your username, and see simulated account cards.
