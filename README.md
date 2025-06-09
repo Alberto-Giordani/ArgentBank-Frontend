@@ -38,9 +38,9 @@ Start the development server with hot-reloading:
 
 - **Profile Management**: View and edit your username on the Profile page.
 
-- **Account Overview**: Displays checking, savings, and credit card accounts with balances.
+- **Account Overview**: Displays checking, savings, and credit card accounts with balances (feature to improve with real data).
 
-- **Responsive Layout**: Mobile-first design with consistent header/nav/footer across pages.
+- **Responsive Layout**: Desktop-first design with consistent header/nav/footer across pages.
 
 ## Usage Examples
 
