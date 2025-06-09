@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { loginSuccess, setProfile } from "../../features/user/userSlice";
 import "./Login.scss";
 
+// Handles login form, authenticates user, fetches profile, and redirects
 function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ function Login() {
         setError("");
 
         try {
+            // // Authenticate and obtain token
             const loginResponse = await fetch("http://localhost:3001/api/v1/user/login", {
                 method: "POST",
                 headers: {
@@ -35,6 +37,7 @@ function Login() {
 
             dispatch(loginSuccess(token));
 
+            // Fetch user profile using the token
             const profileResponse = await fetch("http://localhost:3001/api/v1/user/profile", {
                 method: "GET",
                 headers: {

@@ -4,6 +4,7 @@ import UsernameForm from "../../components/UsernameForm";
 import "./Profile.scss";
 import Account from "../../components/Account";
 
+// Displays user welcome, edit form, and account cards
 function Profile() {
     const { firstName, lastName } = useSelector((state) => state.user);
 

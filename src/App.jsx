@@ -5,18 +5,19 @@ import Profile from './pages/Profile'
 import Layout from './components/Layout'
 import PrivateRoot from './components/PrivateRoot'
 
+// Defines application routes and wraps pages in a common Layout
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
           <Layout containerClass="light-bg">
-            <Home />
+            <Home /> // Public homepage
           </Layout>
         } />
         <Route path="/login" element={
           <Layout>
-            <Login />
+            <Login /> // Login page
           </Layout>
         } />
         <Route
@@ -24,7 +25,7 @@ function App() {
           element={
             <Layout>
               <PrivateRoot>
-                <Profile />
+                <Profile /> // Protected profile page
               </PrivateRoot>
             </Layout>
           }
