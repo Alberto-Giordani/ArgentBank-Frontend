@@ -12,13 +12,11 @@ function App() {
       <Routes>
         <Route path="/" element={
           <Layout containerClass="light-bg">
-            // Public homepage
             <Home />
           </Layout>
         } />
         <Route path="/login" element={
           <Layout>
-            // Login page
             <Login />
           </Layout>
         } />
@@ -27,7 +25,6 @@ function App() {
           element={
             <Layout>
               <PrivateRoot>
-                // Protected profile page
                 <Profile />
               </PrivateRoot>
             </Layout>
