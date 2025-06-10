@@ -1,4 +1,4 @@
-# ArgentBank-Frontend-React
+# ArgentBank-Frontend
 
 A modern React front-end application for Argent Bank, enabling user authentication, profile management, and account overviews.
 
