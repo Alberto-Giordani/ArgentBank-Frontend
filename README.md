@@ -2,19 +2,11 @@
 
 A modern React front-end application for Argent Bank, enabling user authentication, profile management, and account overviews.
 
-## System Requirements
-
-- **Node.js**: version 14.x or higher (recommend using the latest LTS, e.g., 16.x or 18.x)
-
-- **npm**: comes bundled with Node.js
-
-- **Supported Browsers**: Chrome, Firefox, Safari, Edge (latest versions)
-
 ## Installation
 
 1. Clone the repository:
 
-`git clone https://github.com/Alberto-Giordani/ArgentBank-Frontend-React.git`
+`git clone https://github.com/Alberto-Giordani/ArgentBank-Frontend.git`
 
 2. Navigate into the project directory:
 
@@ -39,8 +31,6 @@ Start the development server with hot-reloading:
 - **Profile Management**: View and edit your username on the Profile page.
 
 - **Account Overview**: Displays checking, savings, and credit card accounts with balances (feature to improve with real data).
-
-- **Responsive Layout**: Desktop-first design with consistent header/nav/footer across pages.
 
 ## Usage Examples
 
