@@ -10,7 +10,7 @@ A modern React front-end application for Argent Bank, enabling user authenticati
 
 2. Navigate into the project directory:
 
-`cd ArgentBank-Frontend-React`
+`cd ArgentBank-Frontend`
 
 3. Install dependencies:
 
