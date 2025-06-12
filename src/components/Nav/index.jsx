@@ -11,8 +11,10 @@ function Nav() {
 
     const handleLogout = () => {
         dispatch(logout());
-        navigate("/");
-    }
+        setTimeout(() => {
+            navigate("/", { replace: true });
+        }, 0);
+    };
 
     return (
         <header className="header-nav">
