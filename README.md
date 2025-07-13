@@ -36,7 +36,7 @@ Start the development server with hot-reloading:
 
 ### Login
 
-Enter your email and password, then click **Sign In**.
+Enter the email *tony@iron.com* and the password *iron123*, then click **Sign In**.
 
 ### Profile
 
