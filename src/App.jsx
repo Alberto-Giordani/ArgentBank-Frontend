@@ -8,7 +8,7 @@ import PrivateRoot from './components/PrivateRoot'
 // Defines application routes and wraps pages in a common Layout
 function App() {
   return (
-    <BrowserRouter basename="/ArgentBank">
+    <BrowserRouter basename="/ArgentBank-Frontend/">
       <Routes>
         <Route path="/" element={
           <Layout containerClass="light-bg">

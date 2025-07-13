@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/ArgentBank/',
+  base: '/ArgentBank-Frontend/',
   plugins: [react()],
   server: {
     proxy: {
