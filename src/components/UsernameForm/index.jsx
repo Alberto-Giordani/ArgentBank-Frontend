@@ -14,7 +14,23 @@ function UsernameForm({ onClose }) {
         e.preventDefault();
         setError("");
 
-        try {
+        // Mock API call
+        if (!userNameInput.trim()) {
+            setError("Username cannot be empty");
+            return;
+        }
+
+        // Simulate profile update
+        dispatch(setProfile({
+            firstName,
+            lastName,
+            userName: userNameInput.trim()
+        }));
+
+        onClose();
+
+        // Original code with API call
+        /* try {
             const response = await fetch(
                 "http://localhost:3001/api/v1/user/profile",
                 {
@@ -42,7 +58,7 @@ function UsernameForm({ onClose }) {
 
         } catch (err) {
             setError(err.message);
-        }
+        } */
     }
     return (
         <section className="inlineForm">

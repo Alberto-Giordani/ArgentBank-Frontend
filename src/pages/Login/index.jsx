@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginSuccess, setProfile } from "../../features/user/userSlice";
+import { loginMock, getUserProfileMock } from "../../services/apiMock.js";
 import "./Login.scss";
 
 // Handles login form, authenticates user, fetches profile, and redirects
@@ -17,49 +18,65 @@ function Login() {
         e.preventDefault();
         setError("");
 
+        // Mock login authentication
         try {
-            // // Authenticate and obtain token
-            const loginResponse = await fetch("http://localhost:3001/api/v1/user/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            if (!loginResponse.ok) {
-                const errData = await loginResponse.json();
-                throw new Error(errData.message || "Login failed");
-            }
-
-            const loginData = await loginResponse.json();
-            const token = loginData.body.token;
-
+            const { token } = await loginMock(email, password);
             dispatch(loginSuccess(token));
 
-            // Fetch user profile using the token
-            const profileResponse = await fetch("http://localhost:3001/api/v1/user/profile", {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-            });
+            const profile = await getUserProfileMock(token);
+            const { firstName, lastName } = profile;
 
-            if (!profileResponse.ok) {
-                const errData = await profileResponse.json();
-                throw new Error(errData.message || "Failed to fetch profile");
-            }
-
-            const profileData = await profileResponse.json();
-
-            const { firstName, lastName, userName } = profileData.body;
-
-            dispatch(setProfile({ firstName, lastName, userName }));
+            dispatch(setProfile({ firstName, lastName, userName: "Iron" }));
             navigate("/profile");
         } catch (err) {
             setError(err.message);
         }
+
+
+        // Authenticate and obtain token : original code with API call
+        /*     try {
+                    
+                     const loginResponse = await fetch("http://localhost:3001/api/v1/user/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ email, password }),
+                    });
+        
+                    if (!loginResponse.ok) {
+                        const errData = await loginResponse.json();
+                        throw new Error(errData.message || "Login failed");
+                    }
+        
+                    const loginData = await loginResponse.json();
+                    const token = loginData.body.token;
+        
+                    dispatch(loginSuccess(token));
+        
+                    // Fetch user profile using the token
+                    const profileResponse = await fetch("http://localhost:3001/api/v1/user/profile", {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
+        
+                    if (!profileResponse.ok) {
+                        const errData = await profileResponse.json();
+                        throw new Error(errData.message || "Failed to fetch profile");
+                    }
+        
+                    const profileData = await profileResponse.json();
+        
+                    const { firstName, lastName, userName } = profileData.body;
+        
+                    dispatch(setProfile({ firstName, lastName, userName }));
+                    navigate("/profile");
+                } catch (err) {
+                    setError(err.message);
+                } */
     }
     return (
         <main className="main bg-dark">
